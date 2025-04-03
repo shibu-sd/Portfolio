@@ -11,6 +11,7 @@ export default function Contact() {
 
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState(null);
+  const WEB3FORMS_API_KEY = import.meta.env.VITE_WEB3FORMS_API_KEY;
 
   const validateForm = () => {
     let tempErrors = {};
@@ -53,7 +54,7 @@ export default function Contact() {
 
     // Create a new FormData object to send to Web3Forms API
     const form = new FormData();
-    form.append("access_key", "90f4b8af-e590-42b0-beaf-10b18f66a703"); // Replace with your Web3Forms access key
+    form.append("access_key", WEB3FORMS_API_KEY);
     form.append("name", formData.name);
     form.append("email", formData.email);
     form.append("subject", formData.subject || "New Contact Form Submission");
